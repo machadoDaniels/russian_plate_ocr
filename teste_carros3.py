@@ -17,7 +17,7 @@ def rescale_frame(frame_input, percent=75):
 plate_classifier = cv2.CascadeClassifier('haarcascade_russian_plate_number.xml')
 
 # Initiate video capture for video file
-cap = cv2.VideoCapture('Video Analytics based License Plate Recognition - Entry_ Exit.mp4')
+cap = cv2.VideoCapture('License_plate_detection.mp4')
 
 
 # Loop once video is successfully loaded
@@ -26,7 +26,7 @@ while cap.isOpened():
     sleep(.05)
     # Read first frame
     ret, frame = cap.read()
-    #frame = rescale_frame(frame, 50)
+    frame = rescale_frame(frame, 50)
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
     # Pass frame to our car classifier
